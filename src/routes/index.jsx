@@ -1,13 +1,18 @@
 import MainLayout from '@layouts/MainLayout';
+import AddPage from '@pages/AddPage';
+import DetailPage from '@pages/DetailPage';
 
 import Home from '@pages/Home';
+import LoginPage from '@pages/Login';
 import NotFound from '@pages/NotFound';
+import RegisterPage from '@pages/Register';
+import UpdatePage from '@pages/UpdatePage';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    protected: true,
+    protected: false,
     component: Home,
     layout: MainLayout,
   },
@@ -15,37 +20,37 @@ const routes = [
     path: '/login',
     name: 'login',
     protected: false,
-    component: Login,
+    component: LoginPage,
     layout: MainLayout,
   },
   {
     path: '/register',
     name: 'register',
     protected: false,
-    component: Register,
+    component: RegisterPage,
     layout: MainLayout,
   },
   {
     path: '/add',
     name: 'add',
     protected: false,
-    component: Add,
+    component: AddPage,
     layout: MainLayout,
   },
   {
     path: '/edit',
     name: 'edit',
     protected: false,
-    component: Edit,
+    component: UpdatePage,
     layout: MainLayout,
   },
   {
     path: '/detail/:id',
     name: 'detail',
     protected: false,
-    component: Detail,
+    component: DetailPage,
     layout: MainLayout,
-  }
+  },
   { path: '*', name: 'Not Found', component: NotFound, layout: MainLayout, protected: false },
 ];
 
