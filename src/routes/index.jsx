@@ -1,14 +1,18 @@
 import MainLayout from '@layouts/MainLayout';
+import AddPage from '@pages/AddPage';
+import DetailPage from '@pages/DetailPage';
 
 import Home from '@pages/Home';
 import Login from '@pages/Login';
 import NotFound from '@pages/NotFound';
+import Register from '@pages/Register';
+import UpdatePage from '@pages/UpdatePage';
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    protected: true,
+    protected: false,
     component: Home,
     layout: MainLayout,
   },
@@ -17,15 +21,15 @@ const routes = [
     name: 'login',
     protected: false,
     component: Login,
-    // layout: MainLayout,
+    layout: MainLayout,
   },
-  // {
-  //   path: '/register',
-  //   name: 'register',
-  //   protected: false,
-  //   component: Register,
-  //   layout: MainLayout,
-  // },
+  {
+    path: '/register',
+    name: 'register',
+    protected: false,
+    component: Register,
+    layout: MainLayout,
+  },
   // {
   //   path: '/add',
   //   name: 'add',
