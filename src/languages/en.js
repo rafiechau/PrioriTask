@@ -9,4 +9,9 @@ export default {
   app_popup_close_button_label: 'Close',
 
   app_task: 'Task',
+  app_priority: 'Priority',
+  app_priority_low: 'Low↓',
+  app_priority_medium: 'Medium',
+  app_priority_high: 'High↑',
+  app_task_list: 'Task List',
 };

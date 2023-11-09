@@ -5,7 +5,7 @@ import request from '@utils/request';
 
 const urls = {
   users: 'users',
-  tasks: 'tasks'
+  tasks: 'tasks',
 };
 
 export const callAPI = async (endpoint, method, header = {}, params = {}, data = {}) => {
@@ -29,3 +29,5 @@ export const callAPI = async (endpoint, method, header = {}, params = {}, data =
 };
 
 export const ping = () => callAPI(urls.users, 'get');
+
+export const getAllTasksApi = () => callAPI(urls.tasks, 'GET');

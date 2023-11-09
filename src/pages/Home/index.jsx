@@ -1,9 +1,47 @@
+import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
+import { createStructuredSelector } from 'reselect';
+import { connect, useDispatch } from 'react-redux';
 
-const Home = () => (
-  <div>
-    <FormattedMessage id="app_greeting" />
-  </div>
-);
+import TaskCard from '@components/TaskCard';
+import AddTaskCard from '@components/AddTaskCard';
 
-export default Home;
+import { getAllTasks } from './actions';
+import { selectTasks } from './selectors';
+
+import styles from './style.module.scss';
+
+const Home = ({ tasks }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllTasks());
+  }, [dispatch]);
+
+  return (
+    <div className={styles.home}>
+      <div className={styles.home__header}>
+        <div className={styles.home__title}>
+          <FormattedMessage id="app_task_list" />
+        </div>
+      </div>
+      <div className={styles.card_container}>
+        {tasks.map((task) => (
+          <TaskCard key={task?.id} task={task} />
+        ))}
+        <AddTaskCard />
+      </div>
+    </div>
+  );
+};
+
+Home.propTypes = {
+  tasks: PropTypes.array,
+};
+
+const mapStateToProps = createStructuredSelector({
+  tasks: selectTasks,
+});
+
+export default connect(mapStateToProps)(Home);
