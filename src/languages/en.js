@@ -7,4 +7,6 @@ export default {
   app_popup_error_title: 'Something went wrong!',
   app_popup_error_message: 'Sorry, an error has occurred. Please try again later',
   app_popup_close_button_label: 'Close',
+
+  app_task: 'Task',
 };
