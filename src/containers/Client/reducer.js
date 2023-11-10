@@ -1,10 +1,11 @@
 import { produce } from 'immer';
 
-import { SET_LOGIN, SET_USER } from '@containers/Client/constants';
+import { REGISTER_REQUEST, SET_LOGIN, SET_USER } from '@containers/Client/constants';
 
 export const initialState = {
   login: false,
   user: null,
+  data: null
 };
 
 export const storedKey = ['token', 'login', 'user'];
@@ -18,6 +19,8 @@ const clientReducer = (state = initialState, action) =>
       case SET_USER:
         draft.user = action.user;
         break;
+      case REGISTER_REQUEST:
+        draft.data = action.data
       default:
         break;
     }

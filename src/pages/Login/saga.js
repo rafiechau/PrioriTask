@@ -19,6 +19,7 @@ function* doLogin({ user }) {
             yield put(setUser(userData));
             yield put(setLogin(true))
             Swal.fire("Login Sukses");
+            window.location.reload();
         } else {
             Swal.fire("Invalid Email, Password");
         }

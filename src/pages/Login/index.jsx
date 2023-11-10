@@ -16,7 +16,8 @@ function Login({ login }) {
     const [password, setPassword] = useState('');
 
 
-    const handleLogin = () => {
+    const handleLogin = (e) => {
+        e.preventDefault()
         dispatch(setUser({ email, password }))
         navigate('/')
     }

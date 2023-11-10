@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './style.module.scss'
-import { useDispatch } from 'react-redux'
+import { connect, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { createStructuredSelector } from 'reselect'
 import { selectLogin } from '@containers/Client/selectors'
+import { createStructuredSelector } from 'reselect'
+import PropTypes from 'prop-types';
 
-const Register = () => {
+const Register = ({login}) => {
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (login) {
+      navigate('/')
+    }
+  }, [])
 
   return (
     <div className={styles.registerContainer}>
@@ -27,6 +34,13 @@ const Register = () => {
   )
 }
 
+Register.propTypes = {
+  login: PropTypes.bool,
+};
 
+const mapStateToProps = createStructuredSelector({
+  login: selectLogin,
+});
 
-export default Register
+export default connect(mapStateToProps)(Register);
+

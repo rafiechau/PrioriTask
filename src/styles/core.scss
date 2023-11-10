@@ -20,7 +20,12 @@
 body {
   margin: 0;
   background-color: $color-background;
-  color: var(--color-text);
+  color: $color-text-primary;
+  background-image: url('@static/images/background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 html[data-theme='light'] {

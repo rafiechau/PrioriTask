@@ -29,8 +29,12 @@ export const callAPI = async (endpoint, method, header = {}, params = {}, data =
   });
 };
 
-export const ping = () => callAPI(urls.ping, 'get');
 
 export const getAllUser = () => {
   return callAPI(urls.users, 'GET');
 }
+export const ping = () => callAPI(urls.users, 'get');
+
+export const getAllTasksApi = () => callAPI(urls.tasks, 'GET');
+
+export const getTaskByIdApi = (id) => callAPI(`${urls.tasks}/${id}`, 'GET');
