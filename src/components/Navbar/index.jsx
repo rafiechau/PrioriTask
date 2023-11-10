@@ -35,7 +35,7 @@ const Navbar = ({ title, locale, user }) => {
   const handleLogout = () => {
     localStorage.removeItem('persist:client');
     window.location.reload();
-    navigate('/login')
+    navigate('/login');
   };
 
   const handleClick = (event) => {

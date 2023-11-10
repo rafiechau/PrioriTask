@@ -29,7 +29,6 @@ export const callAPI = async (endpoint, method, header = {}, params = {}, data =
   });
 };
 
-
 export const ping = () => callAPI(urls.ping, 'get');
 export const getAllUser = () => callAPI(urls.users, 'GET');
 
@@ -37,5 +36,5 @@ export const getAllTasksByIdApi = (id) => callAPI(`${urls.tasks}?userId=${id}`, 
 
 export const getTaskByIdApi = (id) => callAPI(`${urls.tasks}/${id}`, 'GET');
 
-export const addUser = (user) => callAPI(urls.users, 'POST', {}, {}, user)
+export const addUser = (user) => callAPI(urls.users, 'POST', {}, {}, user);
 export const deleteTaskByIdApi = (id) => callAPI(`${urls.tasks}/${id}`, 'DELETE');
