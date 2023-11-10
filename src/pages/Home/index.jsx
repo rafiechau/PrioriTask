@@ -7,17 +7,18 @@ import { connect, useDispatch } from 'react-redux';
 import TaskCard from '@components/TaskCard';
 import AddTaskCard from '@components/AddTaskCard';
 
-import { getAllTasks } from './actions';
+import { selectUser } from '@containers/Client/selectors';
+import { getAllTasksByUserId } from './actions';
 import { selectTasks } from './selectors';
 
 import styles from './style.module.scss';
 
-const Home = ({ tasks }) => {
+const Home = ({ tasks, user }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getAllTasks());
-  }, [dispatch]);
+    dispatch(getAllTasksByUserId(user?.id));
+  }, [dispatch, user?.id]);
 
   return (
     <div className={styles.home}>
@@ -38,10 +39,12 @@ const Home = ({ tasks }) => {
 
 Home.propTypes = {
   tasks: PropTypes.array,
+  user: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
   tasks: selectTasks,
+  user: selectUser,
 });
 
 export default connect(mapStateToProps)(Home);

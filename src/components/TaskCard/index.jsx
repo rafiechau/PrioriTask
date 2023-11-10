@@ -1,26 +1,44 @@
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
 import { getInitialIconIndex, useDynamicStyles } from '@utils/useDynamicStyles';
+import { deleteTaskById } from '@pages/Home/actions';
 
 import { CheckCircle, CheckCircleOutline, Delete, Edit, HourglassTop, Visibility } from '@mui/icons-material';
-import { Tooltip } from '@mui/material';
+import { Dialog, DialogActions, DialogContent, DialogTitle, Tooltip } from '@mui/material';
 
 import styles from './style.module.scss';
 
 const TaskCard = ({ task }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const icons = [CheckCircleOutline, HourglassTop, CheckCircle];
   const [iconIndex, setIconIndex] = useState(getInitialIconIndex(task?.status));
   const Icon = icons[iconIndex];
   const { iconClass, priorityClass, statusClass, statusClass2 } = useDynamicStyles(task, styles);
 
+  const [isDeleteDialogOpen, setDeleteDialogOpen] = useState(false);
+
   const handleToggleStatus = () => {
     const nextIconIndex = (iconIndex + 1) % 3;
     setIconIndex(nextIconIndex);
+  };
+
+  const handleDeleteClick = () => {
+    setDeleteDialogOpen(true);
+  };
+
+  const handleDeleteConfirm = () => {
+    dispatch(deleteTaskById(task?.id));
+    setDeleteDialogOpen(false);
+  };
+
+  const handleDeleteCancel = () => {
+    setDeleteDialogOpen(false);
   };
 
   return (
@@ -66,10 +84,35 @@ const TaskCard = ({ task }) => {
             <Edit className={`${styles.card__actions__edit} ${styles.card__actions__icon}`} />
           </Tooltip>
           <Tooltip title="Delete">
-            <Delete className={`${styles.card__actions__delete} ${styles.card__actions__icon}`} />
+            <Delete
+              className={`${styles.card__actions__delete} ${styles.card__actions__icon}`}
+              onClick={handleDeleteClick}
+            />
           </Tooltip>
         </div>
       </div>
+      <Dialog className={styles.dialog} open={isDeleteDialogOpen} onClose={handleDeleteCancel}>
+        <DialogTitle className={styles.dialog__title}>Delete Task</DialogTitle>
+        <DialogContent className={styles.dialog__content}>
+          <FormattedMessage id="app_are_you_sure" />
+        </DialogContent>
+        <DialogActions>
+          <button
+            type="button"
+            onClick={handleDeleteCancel}
+            className={`${styles.dialog__button} ${styles.dialog__cancel}`}
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            onClick={handleDeleteConfirm}
+            className={`${styles.dialog__button} ${styles.dialog__delete}`}
+          >
+            Delete
+          </button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };

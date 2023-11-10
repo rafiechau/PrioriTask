@@ -1,12 +1,14 @@
 export default {
   app_greeting: 'Hi from Web!',
-  app_title_header: 'Bootcamp',
+  app_title_header: 'Priori',
   app_not_found: 'Page not found',
   app_lang_id: 'Indonesian',
   app_lang_en: 'English',
   app_popup_error_title: 'Something went wrong!',
   app_popup_error_message: 'Sorry, an error has occurred. Please try again later',
   app_popup_close_button_label: 'Close',
+  app_error_register_message_1: 'All data must be filled in !',
+  app_error_register_message_2: 'Password must be at least 6 characters long !',
 
   app_task: 'Task',
   app_priority: 'Priority',
@@ -20,4 +22,10 @@ export default {
   app_status_done: 'Done',
   app_description: 'Description',
   app_back: 'Back',
+  app_logout: 'Logout',
+  app_are_you_sure: 'Are you sure you want to delete this task?',
+  app_fullName: 'Fullname',
+  app_here: 'Here',
+  app_to_login: 'to Login',
+  app_have_account: 'Dont have an Account?'
 };

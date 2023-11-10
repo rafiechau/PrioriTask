@@ -22,12 +22,12 @@ const Register = ({ login }) => {
   const handleRegister = () => {
 
     if (!fullname || !email || !password) {
-      setError('All data must be filled in!!');
+      setError(<FormattedMessage id="app_error_register_message_1" />);
       return;
     }
 
     if (password.length < 6) {
-      setError('Password must be at least 6 characters long!!');
+      setError(<FormattedMessage id="app_error_register_message_2" />);
       return;
     }
     const dataUser = {
@@ -38,7 +38,6 @@ const Register = ({ login }) => {
 
     dispatch(registerRequest(dataUser));
     navigate('/login')
-    // console.log(dataUser, "userdataaaa");
   };
 
 
@@ -54,7 +53,7 @@ const Register = ({ login }) => {
         <div className={styles.title}>Register</div>
         <div className={styles.error}>{error}</div>
         <form action="" className={styles.formRegister}>
-          <label htmlFor="">Fullname :</label>
+          <label htmlFor=""><FormattedMessage id="app_fullName" /> :</label>
           <input type="text" value={fullname} onChange={(e) => setFullname(e.target.value)} />
           <label htmlFor="">Email :</label>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -62,7 +61,7 @@ const Register = ({ login }) => {
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </form>
         <button onClick={handleRegister}>Register</button>
-        <p>Click<a href="" onClick={() => navigate('/login')}> Here</a> to Login</p>
+        <p>Click<a href="" onClick={() => navigate('/login')}> <FormattedMessage id="app_here" /></a> <FormattedMessage id="app_to_login" /></p>
       </div>
     </div>
   )
