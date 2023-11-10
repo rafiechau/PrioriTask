@@ -1,11 +1,10 @@
 {
   "tasks": [
     {
-      "title": "teesssxs",
-      "priority": "low",
-      "status": "done",
+      "title": "teesss update yang kedua",
+      "priority": "high",
+      "status": "todo",
       "description": "<p>testtcdwqcqwdssss</p>",
-      "author": "rafie",
       "userId": 1,
       "id": 1
     },
@@ -33,6 +32,30 @@
       "description": "<p>test</p>",
       "userId": 1,
       "id": 4
+    },
+    {
+      "title": "test tambah",
+      "priority": "medium",
+      "status": "todo",
+      "description": "<p>mantap</p>",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "title": "test tambah yang kedua",
+      "priority": "low",
+      "status": "todo",
+      "description": "<p>p</p>",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "title": "test tambah",
+      "priority": "medium",
+      "status": "todo",
+      "description": "<p>dddd</p>",
+      "userId": 1,
+      "id": 7
     }
   ],
   "users": [

@@ -8,6 +8,9 @@ export default {
   app_popup_error_message: 'Sorry, an error has occurred. Please try again later',
   app_popup_close_button_label: 'Close',
 
+  app_success_alert: 'Good Job Honey',
+  app_success_alert_desc: 'Success to updated data',
+  app_success_alert_des: 'Success to create data',
   app_header_add: 'Create Task',
   app_header_edit: 'Edit Task',
   app_task: 'Task',

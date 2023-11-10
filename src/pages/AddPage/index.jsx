@@ -14,6 +14,7 @@ import { FormattedMessage } from 'react-intl';
 import { selectUser } from '@containers/Client/selectors';
 import styles from './style.module.scss';
 import { updateTask } from './actions';
+import Swal from 'sweetalert2';
 
 const AddPage = ({ task, user }) => {
   const dispatch = useDispatch();
@@ -116,11 +117,21 @@ const AddPage = ({ task, user }) => {
         };
 
         // console.log(taskData);
-        console.log(id);
+        // console.log(id);
         if (id) {
           dispatch(updateTask(id, taskData));
+          Swal.fire({
+            title: 'Good job!',
+            text: 'Berhasil Update data',
+            icon: 'success',
+          });
           navigate('/');
         } else {
+          Swal.fire({
+            title: 'Good job!',
+            text: 'Berhasil Menambahkan data',
+            icon: 'success',
+          });
           navigate('/');
           dispatch(createTask(taskData));
         }
