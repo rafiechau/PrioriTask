@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import { Container } from '@mui/material';
 import { connect, useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -10,10 +10,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { selectTaskById } from '@pages/DetailPage/selectors';
 import { getTaskById } from '@pages/DetailPage/actions';
 import { createStructuredSelector } from 'reselect';
-import styles from './style.module.scss';
-import { updateTask } from './actions';
 import { FormattedMessage } from 'react-intl';
 import { selectUser } from '@containers/Client/selectors';
+import styles from './style.module.scss';
+import { updateTask } from './actions';
 
 const AddPage = ({ task, user }) => {
   const dispatch = useDispatch();
@@ -140,34 +140,8 @@ const AddPage = ({ task, user }) => {
     <Container maxWidth="xl">
       <div className={styles.containerform}>
         <h2>{id ? <FormattedMessage id="app_header_edit" /> : <FormattedMessage id="app_header_add" />}</h2>
-        {/* <Typography
-          variant="h4"
-          gutterBottom
-          sx={{
-            maxWidth: '100%',
-            marginTop: 3,
-          }}
-        >
-          {id ? 'Edit Task' : 'Tambah Task'}
-        </Typography> */}
         <form onSubmit={handleSubmit}>
-          {/* <Box
-            sx={{
-              maxWidth: '100%',
-              marginTop: 3,
-            }}
-          >
-            <TextField
-              fullWidth
-              required
-              name="title"
-              type="text"
-              label="Title"
-              id="fullWidth"
-              value={inputForm.title}
-              onChange={handleChange}
-            />
-          </Box> */}
+
           <div className={styles.containertitle}>
             <label>
               <FormattedMessage id="app_title" />
@@ -228,9 +202,6 @@ const AddPage = ({ task, user }) => {
               {id ? <FormattedMessage id="app_header_edit" /> : <FormattedMessage id="app_header_add" />}
             </button>
           </div>
-          {/* <Button type="submit" color="primary" variant="contained" fullWidth sx={{ marginTop: 3 }}>
-            Submit
-          </Button> */}
         </form>
       </div>
     </Container>
