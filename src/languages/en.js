@@ -18,4 +18,6 @@ export default {
   app_status_todo: 'Todo',
   app_status_progress: 'In Progress',
   app_status_done: 'Done',
+  app_description: 'Description',
+  app_back: 'Back',
 };

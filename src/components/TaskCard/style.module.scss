@@ -1,17 +1,5 @@
 @import '@styles/base';
 
-.icon1 {
-  color: $color-text-secondary;
-}
-
-.icon2 {
-  color: $color-yellow;
-}
-
-.icon3 {
-  color: $color-green;
-}
-
 .card {
   @include flex-items-center;
   border-radius: 1rem;
@@ -107,6 +95,7 @@
       padding: 0.1rem 0.25rem;
       border-radius: 5px;
       width: fit-content;
+      color: $color-white;
     }
   }
   &__actions {
@@ -138,6 +127,18 @@
       color: $color-red;
     }
   }
+}
+
+.icon1 {
+  color: $color-text-secondary;
+}
+
+.icon2 {
+  color: $color-yellow;
+}
+
+.icon3 {
+  color: $color-green;
 }
 
 .todo {
