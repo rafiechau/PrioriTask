@@ -8,6 +8,8 @@
   gap: 1rem;
   &__header {
     @include flex-items-center;
+    flex-direction: column;
+    gap: 0.5rem;
     justify-content: space-between;
     max-width: 30rem;
     margin-left: auto;

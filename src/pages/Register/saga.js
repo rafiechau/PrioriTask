@@ -16,7 +16,7 @@ export function* handleRegister({data}) {
             console.log(data, "<<< di saga");
             const newUser = yield call(addUser, data)
     
-            yield put(setUser(newUser))
+            // yield put(setUser(newUser))
             Swal.fire("Register sukses");
         }
     } catch (error) {

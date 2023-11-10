@@ -109,7 +109,7 @@ const AddPage = ({ task, user }) => {
       if (validate()) {
         const taskData = {
           title: inputForm.title,
-          priority: inputForm.priority,
+          priority: inputForm.priority || 'medium',
           status: inputForm.status,
           description: inputForm.description,
           author: inputForm.author,

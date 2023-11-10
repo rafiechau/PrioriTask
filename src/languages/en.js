@@ -12,7 +12,7 @@ export default {
 
   app_success_alert: 'Good Job Honey',
   app_success_alert_desc: 'Success to updated data',
-  app_success_alert_des: 'Success to create data',
+  app_success_alert_desc_create: 'Success to create data',
   app_header_add: 'Create Task',
   app_header_edit: 'Edit Task',
   app_task: 'Task',

@@ -57,12 +57,36 @@
       "id": 7
     },
     {
-      "title": "test update",
+      "title": "test",
+      "priority": "high",
+      "status": "progress",
+      "description": "<p>cdqwcd</p>",
+      "userId": 7,
+      "id": 10
+    },
+    {
+      "title": "update",
       "priority": "low",
-      "status": "todo",
-      "description": "<p>ccwqcwqcwdcwq</p>",
-      "userId": 8,
-      "id": 8
+      "status": "done",
+      "description": "<p>cwcwqsqx\tsq</p>",
+      "userId": 7,
+      "id": 11
+    },
+    {
+      "title": "qxqwede2",
+      "priority": "high",
+      "status": "done",
+      "description": "<p>xwqeq</p>",
+      "userId": 7,
+      "id": 12
+    },
+    {
+      "title": "ini tugas 2",
+      "priority": "medium",
+      "status": "done",
+      "description": "<ol><li>a</li><li>b</li><li>c</li><li>d</li></ol>",
+      "userId": 4,
+      "id": 13
     }
   ],
   "users": [
@@ -85,34 +109,52 @@
       "id": 3
     },
     {
-      "fullname": "uya",
-      "email": "uya@gmail.com",
-      "password": "12345678",
+      "fullName": "rafi",
+      "email": "chau@gmail.com",
+      "password": "123456",
       "id": 4
     },
     {
-      "fullname": "uzu",
-      "email": "uzu@gmail.com",
-      "password": "1234567",
+      "fullName": "alfian",
+      "email": "alfian1@gmail.com",
+      "password": "123456",
       "id": 5
     },
     {
-      "fullname": "lali",
-      "email": "lali@gmail.com",
-      "password": "1234567",
+      "fullName": "malvern",
+      "email": "mavern123@gmail.com",
+      "password": "123456",
       "id": 6
     },
     {
-      "fullname": "binturong",
-      "email": "binturong@gmail.com",
-      "password": "12345678",
+      "fullName": "rafi11",
+      "email": "rafi11@gmail.com",
+      "password": "123456",
       "id": 7
     },
     {
-      "fullname": "rafie",
-      "email": "chau@gmail.com",
-      "password": "123456",
+      "fullName": "binturong",
+      "email": "binturong@gmail.com",
+      "password": "1234567",
       "id": 8
+    },
+    {
+      "fullName": "toyib",
+      "email": "toyib@gmail.com",
+      "password": "12345678",
+      "id": 9
+    },
+    {
+      "fullName": "rafi",
+      "email": "rafi12@gmail.com",
+      "password": "123456",
+      "id": 10
+    },
+    {
+      "fullName": "rafi",
+      "email": "rafi@gmail.com",
+      "password": "123456",
+      "id": 11
     }
   ]
 }

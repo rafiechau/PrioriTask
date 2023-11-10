@@ -10,6 +10,8 @@ export default {
   app_error_register_message_1: 'Semua data harus di isi ya geys !',
   app_error_register_message_2: 'Password minimal 6 karakter ya geys !',
 
+  app_success_alert_desc: 'Sukses ubah data',
+  app_success_alert_desc_create: 'Sukses tambah data',
   app_header_add: 'Tambah Tugas',
   app_header_edit: 'Ubah Tugas',
   app_title: 'Judul',
