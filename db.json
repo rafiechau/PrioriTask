@@ -53,6 +53,12 @@
       "email": "lali@gmail.com",
       "password": "1234567",
       "id": 6
+    },
+    {
+      "fullname": "binturong",
+      "email": "binturong@gmail.com",
+      "password": "12345678",
+      "id": 7
     }
   ]
 }
