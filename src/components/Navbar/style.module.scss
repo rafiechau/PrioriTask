@@ -23,6 +23,8 @@
         font-weight: 500;
         background: linear-gradient(120deg, $color-button, $color-red);
         background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         color: transparent;
         &:hover {
           transform: scale(1.1);
