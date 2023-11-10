@@ -1,1 +1,178 @@
 @import '@styles/base';
+
+.page {
+  @include absolute-center;
+}
+
+.card {
+  position: relative;
+  background-color: $color-white;
+  @include box(25rem);
+  border-radius: 1rem;
+  padding: 2rem;
+  &__header {
+    @include flex-column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  &__icon {
+    @include flex-center;
+    border-radius: 50%;
+    border: 5px solid;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 0.5rem;
+    &__content {
+      width: 3rem !important;
+      height: 3rem !important;
+    }
+  }
+  &__status__content {
+    @include flex-center;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    color: $color-white;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      'item1 item1 item1 item2'
+      'item1 item1 item1 item2'
+      'item3 item3 item3 item3'
+      'item3 item3 item3 item3'
+      'item3 item3 item3 item3'
+      'item3 item3 item3 item3';
+    gap: 0.5rem;
+    &__top {
+    }
+  }
+  &__title {
+    grid-area: item1;
+    &__label {
+      color: $color-text-secondary;
+      font-weight: 500;
+    }
+    &__content {
+      font-size: 1.25rem;
+      display: -webkit-box;
+      max-width: 20rem;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  &__priority {
+    grid-area: item2;
+    text-align: right;
+    &__label {
+      color: $color-text-secondary;
+      font-weight: 500;
+    }
+    &__content {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__description {
+    grid-area: item3;
+
+    &__label {
+      color: $color-text-secondary;
+      font-weight: 500;
+    }
+  }
+  &__back {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    @include flex-items-center;
+    gap: 0.5rem;
+    border: 1px solid $color-text-primary;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem !important;
+    cursor: pointer;
+    &:hover {
+      background-color: $color-text-secondary;
+      color: $color-white;
+      border-color: $color-white;
+    }
+    &__icon {
+      width: 1rem !important;
+      height: 1rem !important;
+    }
+  }
+}
+
+.icon1 {
+  color: $color-text-secondary;
+}
+
+.icon2 {
+  color: $color-yellow;
+}
+
+.icon3 {
+  color: $color-green;
+}
+
+.todo {
+  border-color: $color-text-secondary;
+  &:hover {
+    background-color: $color-text-secondary;
+    .icon1 {
+      color: $color-white;
+    }
+  }
+}
+
+.in_progress {
+  border-color: $color-yellow;
+  &:hover {
+    background-color: $color-yellow;
+    .icon2 {
+      color: $color-white;
+    }
+  }
+}
+
+.done {
+  border-color: $color-green;
+  &:hover {
+    background-color: $color-green;
+    .icon3 {
+      color: $color-white;
+    }
+  }
+}
+
+.todo2 {
+  background-color: $color-text-secondary;
+}
+
+.in_progress2 {
+  background-color: $color-yellow;
+}
+
+.done2 {
+  background-color: $color-green;
+}
+
+.low {
+  color: $color-green;
+}
+
+.medium {
+  color: $color-yellow;
+}
+
+.high {
+  color: $color-red;
+}
