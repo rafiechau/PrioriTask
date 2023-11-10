@@ -4,6 +4,7 @@ import { merge } from 'lodash';
 import request from '@utils/request';
 
 const urls = {
+  ping: 'ping.json',
   users: 'users',
   tasks: 'tasks',
 };
@@ -28,6 +29,10 @@ export const callAPI = async (endpoint, method, header = {}, params = {}, data =
   });
 };
 
+
+export const getAllUser = () => {
+  return callAPI(urls.users, 'GET');
+}
 export const ping = () => callAPI(urls.users, 'get');
 
 export const getAllTasksApi = () => callAPI(urls.tasks, 'GET');

@@ -12,20 +12,20 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    protected: false,
+    protected: true,
     component: Home,
     layout: MainLayout,
   },
   {
     path: '/login',
-    name: 'login',
+    name: 'Login',
     protected: false,
     component: LoginPage,
     layout: MainLayout,
   },
   {
     path: '/register',
-    name: 'register',
+    name: 'Register',
     protected: false,
     component: RegisterPage,
     layout: MainLayout,
