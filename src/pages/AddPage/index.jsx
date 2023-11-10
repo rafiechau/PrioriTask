@@ -12,31 +12,42 @@ import { getTaskById } from '@pages/DetailPage/actions';
 import { createStructuredSelector } from 'reselect';
 import styles from './style.module.scss';
 import { updateTask } from './actions';
+import { FormattedMessage } from 'react-intl';
+import { selectUser } from '@containers/Client/selectors';
 
-const AddPage = ({ task }) => {
+const AddPage = ({ task, user }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
   // console.log(task);
-  // console.log(id);
+  // console.log(user);
 
-  const user = {
-    id: 1,
-    full_name: 'rafie',
-  };
+  // const user = {
+  //   id: 1,
+  //   full_name: 'rafie',
+  // };
 
   const [inputForm, setInputForm] = useState({
     title: task?.title || '',
     priority: task?.priority || '',
-    status: task?.status || 'Todo',
+    status: task?.status || 'todo',
     description: task?.description || '',
-    author: user?.full_name,
+    author: user?.fullName,
     userId: user?.id,
   });
 
   useEffect(() => {
     if (id) {
       dispatch(getTaskById(id));
+    } else {
+      setInputForm({
+        title: '',
+        priority: '',
+        status: 'todo',
+        description: '',
+        author: user?.full_name,
+        userId: user?.id,
+      });
     }
   }, [dispatch, id]);
 
@@ -45,7 +56,7 @@ const AddPage = ({ task }) => {
       setInputForm({
         title: task?.title || '',
         priority: task?.priority || '',
-        status: task?.status || 'Todo',
+        status: task?.status || 'todo',
         description: task?.description || '',
         author: user?.full_name,
         userId: user?.id,
@@ -55,7 +66,7 @@ const AddPage = ({ task }) => {
       setInputForm({
         title: task?.title || '',
         priority: task?.priority || '',
-        status: task?.status || 'Todo',
+        status: task?.status || 'todo',
         description: task?.description || '',
         author: user?.full_name,
         userId: user?.id,
@@ -108,11 +119,12 @@ const AddPage = ({ task }) => {
         console.log(id);
         if (id) {
           dispatch(updateTask(id, taskData));
-          // navigate('/');
+          navigate('/');
         } else {
+          navigate('/');
           dispatch(createTask(taskData));
-          // navigate('/');
         }
+        // navigate('/');
       }
     }
   };
@@ -127,7 +139,8 @@ const AddPage = ({ task }) => {
   return (
     <Container maxWidth="xl">
       <div className={styles.containerform}>
-        <Typography
+        <h2>{id ? <FormattedMessage id="text_edit_task" /> : <FormattedMessage id="text_create_task" />}</h2>
+        {/* <Typography
           variant="h4"
           gutterBottom
           sx={{
@@ -136,9 +149,9 @@ const AddPage = ({ task }) => {
           }}
         >
           {id ? 'Edit Task' : 'Tambah Task'}
-        </Typography>
+        </Typography> */}
         <form onSubmit={handleSubmit}>
-          <Box
+          {/* <Box
             sx={{
               maxWidth: '100%',
               marginTop: 3,
@@ -154,7 +167,24 @@ const AddPage = ({ task }) => {
               value={inputForm.title}
               onChange={handleChange}
             />
-          </Box>
+          </Box> */}
+          <div className={styles.containertitle}>
+            <label>
+              <FormattedMessage id="text_title_task" />
+            </label>
+            <input
+              required
+              name="title"
+              type="text"
+              label="Title"
+              id="fullWidth"
+              value={inputForm.title}
+              onChange={handleChange}
+            />
+          </div>
+          <label htmlFor="short-description" className={styles.label}>
+            <FormattedMessage id="text_priority_task" />
+          </label>
           <div className={styles.containerCard}>
             <div
               className={`${styles.priorityCard} ${inputForm.priority === 'high' ? styles.highPriority : ''}`}
@@ -187,9 +217,12 @@ const AddPage = ({ task }) => {
               onChange={handleDescriptionChange}
             />
           </div>
-          <Button type="submit" color="primary" variant="contained" fullWidth sx={{ marginTop: 3 }}>
+          <div className={styles.containerbutton}>
+            <button type="submit">Submit</button>
+          </div>
+          {/* <Button type="submit" color="primary" variant="contained" fullWidth sx={{ marginTop: 3 }}>
             Submit
-          </Button>
+          </Button> */}
         </form>
       </div>
     </Container>
@@ -198,10 +231,12 @@ const AddPage = ({ task }) => {
 
 AddPage.propTypes = {
   task: PropTypes.object,
+  user: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
   task: selectTaskById,
+  user: selectUser,
 });
 
 export default connect(mapStateToProps)(AddPage);

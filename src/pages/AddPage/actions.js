@@ -1,5 +1,4 @@
-import { CREATE_TASK, RESET_ADD_TASK, SET_NEW_TASK, SET_UPDATE_TASK, UPDATE_TAKS } from "./constants"
-
+import { CREATE_TASK, RESET_ADD_TASK, SET_NEW_TASK, SET_UPDATE_TASK, UPDATE_TAKS } from './constants';
 
 export const createTask = (data) => ({
   type: CREATE_TASK,

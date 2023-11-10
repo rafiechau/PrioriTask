@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
+import { getInitialIconIndex, useDynamicStyles } from '@utils/useDynamicStyles';
 
 import { CheckCircle, CheckCircleOutline, Delete, Edit, HourglassTop, Visibility } from '@mui/icons-material';
 import { Tooltip } from '@mui/material';
@@ -15,54 +16,20 @@ const TaskCard = ({ task }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const getInitialIconIndex = (status) => {
-    switch (status) {
-      case 'todo':
-        return 0;
-      case 'progress':
-        return 1;
-      case 'done':
-        return 2;
-      default:
-        return 0;
-    }
-  };
-
-  const [iconIndex, setIconIndex] = useState(getInitialIconIndex(task?.status));
-  // console.log(task, "test");
   const icons = [CheckCircleOutline, HourglassTop, CheckCircle];
-  const classNames = [styles.icon1, styles.icon2, styles.icon3];
-  const priorities = [styles.low, styles.medium, styles.high];
-
-  const statusStyles = {
-    todo: styles.todo,
-    progress: styles.in_progress,
-    done: styles.done,
-  };
-
-  const statusStyles2 = {
-    todo: styles.todo2,
-    progress: styles.in_progress2,
-    done: styles.done2,
-  };
-
-  const priorityIndex = priorities.indexOf(styles[task?.priority]) || 0;
-
+  const [iconIndex, setIconIndex] = useState(getInitialIconIndex(task?.status));
   const Icon = icons[iconIndex];
-  const iconClass = classNames[iconIndex];
-  const priorityClass = priorities[priorityIndex];
-  const statusClass = statusStyles[task?.status];
-  const statusClass2 = statusStyles2[task?.status];
+  const { iconClass, priorityClass, statusClass, statusClass2 } = useDynamicStyles(task, styles);
 
   const handleToggleStatus = () => {
-    console.log(task.id)
+    console.log(task.id);
     const newIconIndex = (iconIndex + 1) % icons.length;
     setIconIndex(newIconIndex);
 
   const newStatus = newIconIndex === 0 ? 'todo' : newIconIndex === 1 ? 'progress' : 'done';
 
-  // Dispatch action untuk Redux
-  dispatch(toggleTaskStatus(task.id, { ...task, status: newStatus }));
+    // Dispatch action untuk Redux
+    dispatch(toggleTaskStatus(task.id, { ...task, status: newStatus }));
   };
 
   return (

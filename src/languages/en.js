@@ -18,4 +18,13 @@ export default {
   app_status_todo: 'Todo',
   app_status_progress: 'In Progress',
   app_status_done: 'Done',
+  app_description: 'Description',
+  app_back: 'Back',
+  text_create_task: 'Create Taks',
+  text_edit_task: 'Edit Taks',
+  text_title_task: 'Title',
+  text_description_task: 'Description',
+  text_priority_task: 'Priority',
+  text_submit: 'Submit',
+  text_update: 'Update',
 };

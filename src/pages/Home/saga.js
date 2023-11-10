@@ -1,14 +1,14 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { getAllTasksApi, updateTaskApi } from '@domain/api';
-import { setAllTasks, toggleTaskStatusFailure, toggleTaskStatusSuccess } from './actions';
-import { GET_ALL_TASKS, TOGGLE_TASK_STATUS } from './constants';
+import { updateTaskApi, getAllTasksByIdApi  } from '@domain/api';
+import { toggleTaskStatusFailure, toggleTaskStatusSuccess, setAllTasksByUserId } from './actions';
+import { TOGGLE_TASK_STATUS, GET_ALL_TASKS_BY_USER_ID } from './constants';
 
-export function* doGetAllTasks() {
+export function* doGetAllTasks(action) {
   try {
-    const response = yield call(getAllTasksApi);
-    yield put(setAllTasks(response));
+    const response = yield call(getAllTasksByIdApi, action.id);
+    yield put(setAllTasksByUserId(response));
   } catch (error) {
-    console.log(error, '<<<Error get all tasks');
+    console.log(error, '<<<Error get all tasks by id');
   }
 }
 
@@ -24,6 +24,6 @@ export function* doToggleTaskStatus(action) {
 }
 
 export default function* homeSaga() {
-  yield takeLatest(GET_ALL_TASKS, doGetAllTasks);
   yield takeLatest(TOGGLE_TASK_STATUS, doToggleTaskStatus);
+  yield takeLatest(GET_ALL_TASKS_BY_USER_ID, doGetAllTasks);
 }

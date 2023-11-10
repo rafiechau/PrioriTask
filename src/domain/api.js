@@ -30,9 +30,10 @@ export const createTask = (task) => callAPI(urls.tasks, 'POST', {}, {}, task);
 
 export const updateTask = (taskId, data) => callAPI(`${urls.tasks}/${taskId}`, 'PUT', {}, {}, data);
 
+export const getAllUser = () => callAPI(urls.users, 'GET');
 export const ping = () => callAPI(urls.users, 'get');
 
-export const getAllTasksApi = () => callAPI(urls.tasks, 'GET');
+export const getAllTasksByIdApi = (id) => callAPI(`${urls.tasks}?userId=${id}`, 'GET');
 
 export const getTaskByIdApi = (id) => callAPI(`${urls.tasks}/${id}`, 'GET');
 

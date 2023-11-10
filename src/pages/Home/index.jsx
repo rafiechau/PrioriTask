@@ -8,18 +8,20 @@ import TaskCard from '@components/TaskCard';
 import AddTaskCard from '@components/AddTaskCard';
 
 import { useNavigate } from 'react-router-dom';
-import { getAllTasks } from './actions';
+import { selectUser } from '@containers/Client/selectors';
+import { getAllTasksByUserId } from './actions';
+
 import { selectTasks } from './selectors';
 
 import styles from './style.module.scss';
 
-const Home = ({ tasks }) => {
+const Home = ({ tasks, user }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(getAllTasks());
-  }, [dispatch]);
+    dispatch(getAllTasksByUserId(user?.id));
+  }, [dispatch, user?.id]);
 
   const handleAddPage = () => {
     navigate('/add');
@@ -48,10 +50,12 @@ const Home = ({ tasks }) => {
 
 Home.propTypes = {
   tasks: PropTypes.array,
+  user: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
   tasks: selectTasks,
+  user: selectUser,
 });
 
 export default connect(mapStateToProps)(Home);

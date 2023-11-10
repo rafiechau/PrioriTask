@@ -1,18 +1,20 @@
 import {
-  GET_ALL_TASKS,
-  SET_ALL_TASKS,
   TOGGLE_TASK_STATUS,
   TOGGLE_TASK_STATUS_FAILURE,
   TOGGLE_TASK_STATUS_SUCCESS,
+  GET_ALL_TASKS_BY_USER_ID,
+  SET_ALL_TASKS_BY_USER_ID,
 } from './constants';
 
-export const getAllTasks = () => ({
-  type: GET_ALL_TASKS,
+export const getAllTasksByUserId = (id) => ({
+  type: GET_ALL_TASKS_BY_USER_ID,
+  id,
 });
 
-export const setAllTasks = (tasks) => ({
-  type: SET_ALL_TASKS,
+export const setAllTasksByUserId = (tasks, id) => ({
+  type: SET_ALL_TASKS_BY_USER_ID,
   tasks,
+  id,
 });
 
 export const toggleTaskStatus = (taskId, data) => ({
@@ -29,18 +31,3 @@ export const toggleTaskStatusFailure = (error) => ({
   type: TOGGLE_TASK_STATUS_FAILURE,
   payload: error,
 });
-
-// export const toggleTaskStatus = (taskId, newStatus) => ({
-//   type: TOGGLE_TASK_STATUS,
-//   payload: { taskId, newStatus },
-// });
-
-// export const toggleTaskStatusSuccess = (updatedTask) => ({
-//   type: TOGGLE_TASK_STATUS_SUCCESS,
-//   payload: updatedTask,
-// });
-
-// export const toggleTaskStatusFailure = (error) => ({
-//   type: TOGGLE_TASK_STATUS_FAILURE,
-//   payload: error,
-// });

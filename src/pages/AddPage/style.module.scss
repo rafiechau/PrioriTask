@@ -4,18 +4,36 @@
     margin: 40px auto;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: $color-white;
+    .containertitle{
+        @include directionY;
+        margin-bottom: 30px;
+        input {
+            padding: 20px;
+            background-color: $color-background;
+            border: none;
+            border-radius: 10px;
+        }
+    }
+    
     .containerCard{
-        display: flex;
+        @include directionX;
+        justify-content: space-around;
         flex-wrap: wrap;
-        justify-content: center;
         gap: 10px;
+        margin-bottom: 20px;
+        
         .priorityCard{
+            width: 150px;
+            background-color: $color-background;
             padding: 30px 30px;
             border: hsl(229, 37%, 71%) 1px solid;
             border-radius: 10px;
             margin-top: 10px;
             display:  flex;
             flex-direction: row;
+            justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
             &:hover{
                 border: hsl(229, 79%, 35%) 1px solid !important;
@@ -39,10 +57,31 @@
         }
         
     }
+    .containerbutton{
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+        // background-color: pink;
+    }
+    button{
+        background-color: $color-button;
+        padding: 10px;
+        width: 90%;
+        margin: 10px;
+        cursor: pointer;
+        color: $color-white;
+        border-radius: 10px;
+        justify-content: center;
+    }
 }
+
 .description{
     width: 100%;
-    height: 215px;
-    background-color: white !important; 
+    height: 150px;
+    background-color: $color-background !important; 
+}
+
+.ql-editor {
+    background-color: $color-background !important;
 }
 
