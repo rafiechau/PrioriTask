@@ -87,7 +87,7 @@
     width: fit-content;
     grid-area: item3;
     @include apply-at-md-size {
-      width: 4.5rem;
+      width: 6rem;
     }
     &__content {
       font-size: 0.65rem;
@@ -125,6 +125,42 @@
     }
     &__delete {
       color: $color-red;
+    }
+  }
+}
+
+.dialog {
+  &__title {
+    font-family: 'Poppins', sans-serif !important;
+  }
+  &__content {
+    font-size: 0.9rem;
+  }
+  &__button {
+    padding: 0.25rem 0.5rem;
+
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+  }
+  &__cancel {
+    box-sizing: border-box;
+    border: 1px solid $color-text-primary;
+    &:hover {
+      color: $color-white;
+      background-color: $color-text-primary;
+    }
+  }
+  &__delete {
+    box-sizing: border-box;
+    background-color: $color-red;
+    color: $color-white;
+    font-weight: 600;
+    &:hover {
+      color: $color-red;
+      background-color: $color-white;
+      border: 1px solid;
     }
   }
 }

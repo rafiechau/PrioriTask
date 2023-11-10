@@ -1,7 +1,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { getAllTasksByIdApi } from '@domain/api';
+import { deleteTaskByIdApi, getAllTasksByIdApi } from '@domain/api';
 import { setAllTasksByUserId } from './actions';
-import { GET_ALL_TASKS_BY_USER_ID } from './constants';
+import { DELETE_TASK_BY_ID, GET_ALL_TASKS_BY_USER_ID } from './constants';
 
 export function* doGetAllTasks(action) {
   try {
@@ -12,6 +12,15 @@ export function* doGetAllTasks(action) {
   }
 }
 
+export function* doDeleteTaskById(action) {
+  try {
+    yield call(deleteTaskByIdApi, action.id);
+  } catch (error) {
+    console.log(error, '<<<Error deleting task by id');
+  }
+}
+
 export default function* homeSaga() {
   yield takeLatest(GET_ALL_TASKS_BY_USER_ID, doGetAllTasks);
+  yield takeLatest(DELETE_TASK_BY_ID, doDeleteTaskById);
 }

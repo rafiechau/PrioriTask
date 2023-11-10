@@ -71,10 +71,10 @@ const DetailPage = ({ task }) => {
             />
           </div>
         </div>
-        <div className={styles.card__back} onClick={handleBack}>
-          <ArrowBack className={styles.card__back__icon} />
-          <FormattedMessage id="app_back" />
-        </div>
+      </div>
+      <div className={styles.back} onClick={handleBack}>
+        <ArrowBack className={styles.back__icon} />
+        <FormattedMessage id="app_back" />
       </div>
     </div>
   );

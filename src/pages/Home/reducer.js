@@ -1,5 +1,5 @@
 import { produce } from 'immer';
-import { SET_ALL_TASKS_BY_USER_ID } from './constants';
+import { DELETE_TASK_BY_ID, SET_ALL_TASKS_BY_USER_ID } from './constants';
 
 export const initialState = {
   tasks: [],
@@ -12,6 +12,9 @@ const homeReducer = (state = initialState, action) =>
     switch (action.type) {
       case SET_ALL_TASKS_BY_USER_ID:
         draft.tasks = action.tasks;
+        break;
+      case DELETE_TASK_BY_ID:
+        draft.tasks = draft.tasks.filter((task) => task.id !== action.id);
         break;
     }
   });
