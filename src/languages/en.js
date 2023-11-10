@@ -1,6 +1,6 @@
 export default {
   app_greeting: 'Hi from Web!',
-  app_title_header: 'Bootcamp',
+  app_title_header: 'Priori',
   app_not_found: 'Page not found',
   app_lang_id: 'Indonesian',
   app_lang_en: 'English',
@@ -8,7 +8,10 @@ export default {
   app_popup_error_message: 'Sorry, an error has occurred. Please try again later',
   app_popup_close_button_label: 'Close',
 
+  app_header_add: 'Create Task',
+  app_header_edit: 'Edit Task',
   app_task: 'Task',
+  app_title: 'Title',
   app_priority: 'Priority',
   app_priority_low: 'Low↓',
   app_priority_medium: 'Medium',
@@ -20,11 +23,6 @@ export default {
   app_status_done: 'Done',
   app_description: 'Description',
   app_back: 'Back',
-  text_create_task: 'Create Taks',
-  text_edit_task: 'Edit Taks',
-  text_title_task: 'Title',
-  text_description_task: 'Description',
-  text_priority_task: 'Priority',
-  text_submit: 'Submit',
-  text_update: 'Update',
+  app_logout: 'Logout',
+  app_are_you_sure: 'Are you sure you want to delete this task?',
 };

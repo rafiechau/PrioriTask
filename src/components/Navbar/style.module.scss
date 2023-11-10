@@ -9,7 +9,7 @@
     @include directionX;
 
     color: var(--color-text);
-    padding: 1rem;
+    padding: 0.3rem 1rem;
     align-items: center;
     justify-content: space-between;
     font-size: 1rem;
@@ -19,18 +19,23 @@
       cursor: pointer;
       align-items: center;
 
-      .logo {
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-right: 0.5rem;
+      .titleLeft {
+        font-weight: 500;
+        background: linear-gradient(120deg, $color-button, $color-red);
+        background-clip: text;
+        color: transparent;
+        &:hover {
+          transform: scale(1.1);
+        }
       }
-      .title {
+      .titleRight {
         font-weight: 700;
       }
     }
 
     .toolbar {
       @include directionX;
+      gap: 1rem;
       .theme {
         @include directionX;
         align-items: center;
@@ -79,4 +84,45 @@
     font-family: Poppins, Arial, Helvetica, sans-serif;
     font-size: 0.8rem;
   }
+}
+
+.dropdown {
+  margin-top: 3rem;
+  position: relative;
+  &__item {
+    @include flex-items-center;
+    gap: 1rem;
+    padding: 0.5rem 1rem !important;
+  }
+}
+
+.logoutIcon {
+  width: 1rem !important;
+  color: $color-red;
+}
+
+.logoutText {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: $color-red;
+}
+
+.userData {
+  padding: 0.25rem 0.5rem;
+}
+
+.fullName {
+  font-size: 0.85rem;
+  @include truncate(8rem);
+}
+
+.email {
+  font-size: 0.7rem;
+  color: $color-text-secondary;
+  @include truncate(8rem);
+}
+
+.divider {
+  @include box(100%, 1px);
+  background-color: $color-text-secondary;
 }

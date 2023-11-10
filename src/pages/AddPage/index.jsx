@@ -139,7 +139,7 @@ const AddPage = ({ task, user }) => {
   return (
     <Container maxWidth="xl">
       <div className={styles.containerform}>
-        <h2>{id ? <FormattedMessage id="text_edit_task" /> : <FormattedMessage id="text_create_task" />}</h2>
+        <h2>{id ? <FormattedMessage id="app_header_edit" /> : <FormattedMessage id="app_header_add" />}</h2>
         {/* <Typography
           variant="h4"
           gutterBottom
@@ -170,7 +170,7 @@ const AddPage = ({ task, user }) => {
           </Box> */}
           <div className={styles.containertitle}>
             <label>
-              <FormattedMessage id="text_title_task" />
+              <FormattedMessage id="app_title" />
             </label>
             <input
               required
@@ -183,31 +183,37 @@ const AddPage = ({ task, user }) => {
             />
           </div>
           <label htmlFor="short-description" className={styles.label}>
-            <FormattedMessage id="text_priority_task" />
+            <FormattedMessage id="app_priority" />
           </label>
           <div className={styles.containerCard}>
             <div
               className={`${styles.priorityCard} ${inputForm.priority === 'high' ? styles.highPriority : ''}`}
               onClick={() => handleSelectPlan('high')}
             >
-              <h3>High</h3>
+              <h3>
+                <FormattedMessage id="app_priority_high" />
+              </h3>
             </div>
             <div
               className={`${styles.priorityCard} ${inputForm.priority === 'medium' ? styles.mediumPriority : ''}`}
               onClick={() => handleSelectPlan('medium')}
             >
-              <h3>Medium</h3>
+              <h3>
+                <FormattedMessage id="app_priority_medium" />
+              </h3>
             </div>
             <div
               className={`${styles.priorityCard} ${inputForm.priority === 'low' ? styles.lowPriority : ''}`}
               onClick={() => handleSelectPlan('low')}
             >
-              <h3>Low</h3>
+              <h3>
+                <FormattedMessage id="app_priority_low" />
+              </h3>
             </div>
           </div>
           <div className={styles.wrapperDescription}>
             <label htmlFor="short-description" className={styles.label}>
-              Description
+              <FormattedMessage id="app_description" />
             </label>
             <ReactQuill
               id="short-description"
@@ -218,7 +224,9 @@ const AddPage = ({ task, user }) => {
             />
           </div>
           <div className={styles.containerbutton}>
-            <button type="submit">Submit</button>
+            <button type="submit">
+              {id ? <FormattedMessage id="app_header_edit" /> : <FormattedMessage id="app_header_add" />}
+            </button>
           </div>
           {/* <Button type="submit" color="primary" variant="contained" fullWidth sx={{ marginTop: 3 }}>
             Submit

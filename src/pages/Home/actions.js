@@ -4,6 +4,7 @@ import {
   TOGGLE_TASK_STATUS_SUCCESS,
   GET_ALL_TASKS_BY_USER_ID,
   SET_ALL_TASKS_BY_USER_ID,
+  DELETE_TASK_BY_ID,
 } from './constants';
 
 export const getAllTasksByUserId = (id) => ({
@@ -30,4 +31,8 @@ export const toggleTaskStatusSuccess = (updatedTask) => ({
 export const toggleTaskStatusFailure = (error) => ({
   type: TOGGLE_TASK_STATUS_FAILURE,
   payload: error,
+});
+export const deleteTaskById = (id) => ({
+  type: DELETE_TASK_BY_ID,
+  id,
 });

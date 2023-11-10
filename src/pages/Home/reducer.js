@@ -1,5 +1,5 @@
 import { produce } from 'immer';
-import { TOGGLE_TASK_STATUS_SUCCESS, SET_ALL_TASKS_BY_USER_ID } from './constants';
+import { TOGGLE_TASK_STATUS_SUCCESS, SET_ALL_TASKS_BY_USER_ID, DELETE_TASK_BY_ID  } from './constants';
 
 export const initialState = {
   tasks: [],
@@ -18,6 +18,9 @@ const homeReducer = (state = initialState, action) =>
         if (taskIndex !== -1) {
           draft.tasks[taskIndex] = { ...draft.tasks[taskIndex], ...action.payload };
         }
+        break;
+      case DELETE_TASK_BY_ID:
+        draft.tasks = draft.tasks.filter((task) => task.id !== action.id);
         break;
     }
   });

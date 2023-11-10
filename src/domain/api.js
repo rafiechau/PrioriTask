@@ -1,7 +1,3 @@
-import config from '@config/index';
-import { merge } from 'lodash';
-
-import request from '@utils/request';
 import axios from 'axios';
 
 const baseURL = 'http://localhost:5000/';
@@ -38,3 +34,4 @@ export const getAllTasksByIdApi = (id) => callAPI(`${urls.tasks}?userId=${id}`, 
 export const getTaskByIdApi = (id) => callAPI(`${urls.tasks}/${id}`, 'GET');
 
 export const updateTaskApi = (taskId, data) => callAPI(`${urls.tasks}/${taskId}`, 'PUT', {}, {}, data);
+export const deleteTaskByIdApi = (id) => callAPI(`${urls.tasks}/${id}`, 'DELETE');
