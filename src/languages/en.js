@@ -7,4 +7,15 @@ export default {
   app_popup_error_title: 'Something went wrong!',
   app_popup_error_message: 'Sorry, an error has occurred. Please try again later',
   app_popup_close_button_label: 'Close',
+
+  app_task: 'Task',
+  app_priority: 'Priority',
+  app_priority_low: 'Low↓',
+  app_priority_medium: 'Medium',
+  app_priority_high: 'High↑',
+  app_task_list: 'Task List',
+  app_status: 'Status',
+  app_status_todo: 'Todo',
+  app_status_progress: 'In Progress',
+  app_status_done: 'Done',
 };

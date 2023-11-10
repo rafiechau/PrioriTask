@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Go to Gym",
+      "userId": 1,
+      "status": "progress",
+      "priority": "medium",
+      "description": "Go to Gym in monday night RAW"
+    },
+    {
+      "id": 2,
+      "title": "Go to Beach",
+      "userId": 1,
+      "status": "done",
+      "priority": "low",
+      "description": "Go to beach in monday night RAW"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullName": "alfian",
+      "email": "alfian@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": 2,
+      "fullName": "rafie",
+      "email": "rafie@gmail.com",
+      "password": "1234567"
+    }
+  ]
+}
