@@ -4,7 +4,6 @@ import { getAllUser } from '@domain/api';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { LOGIN_USER } from './constants';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
 
 
 

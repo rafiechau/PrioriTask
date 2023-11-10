@@ -29,6 +29,18 @@
       "fullName": "rafie",
       "email": "rafie@gmail.com",
       "password": "1234567"
+    },
+    {
+      "fullName": "laka",
+      "email": "laka@gmail.com",
+      "password": "1234567",
+      "id": 3
+    },
+    {
+      "fullname": "uya",
+      "email": "uya@gmail.com",
+      "password": "12345678",
+      "id": 4
     }
   ]
 }

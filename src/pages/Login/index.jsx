@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import styles from './style.module.scss'
 import { useNavigate } from 'react-router-dom'
 import { connect, useDispatch } from 'react-redux'
+import { FormattedMessage } from 'react-intl';
+import PropTypes from 'prop-types';
+import { createStructuredSelector } from 'reselect'
+
 import { setUser } from './actions'
 import { selectLogin } from '@containers/Client/selectors'
-import { createStructuredSelector } from 'reselect'
-import PropTypes from 'prop-types';
 
+import styles from './style.module.scss'
 
 function Login({ login }) {
     const navigate = useNavigate()
