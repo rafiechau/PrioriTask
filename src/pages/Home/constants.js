@@ -1,2 +1,2 @@
-export const GET_ALL_TASKS = 'GET_ALL_TASKS';
-export const SET_ALL_TASKS = 'SET_ALL_TASKS';
+export const GET_ALL_TASKS_BY_USER_ID = 'GET_ALL_TASKS_BY_USER_ID';
+export const SET_ALL_TASKS_BY_USER_ID = 'SET_ALL_TASKS_BY_USER_ID';
