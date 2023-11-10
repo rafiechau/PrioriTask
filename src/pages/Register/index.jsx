@@ -2,6 +2,8 @@ import React from 'react'
 import styles from './style.module.scss'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { createStructuredSelector } from 'reselect'
+import { selectLogin } from '@containers/Client/selectors'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -24,5 +26,7 @@ const Register = () => {
     </div>
   )
 }
+
+
 
 export default Register

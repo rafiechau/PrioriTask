@@ -1,13 +1,13 @@
 import { produce } from 'immer';
 
-import { SET_LOGIN, SET_TOKEN } from '@containers/Client/constants';
+import { SET_LOGIN, SET_USER } from '@containers/Client/constants';
 
 export const initialState = {
   login: false,
-  token: null,
+  user: null,
 };
 
-export const storedKey = ['token', 'login'];
+export const storedKey = ['token', 'login', 'user'];
 
 const clientReducer = (state = initialState, action) =>
   produce(state, (draft) => {
@@ -15,8 +15,10 @@ const clientReducer = (state = initialState, action) =>
       case SET_LOGIN:
         draft.login = action.login;
         break;
-      case SET_TOKEN:
-        draft.token = action.token;
+      case SET_USER:
+        draft.user = action.user;
+        break;
+      default:
         break;
     }
   });
