@@ -2,16 +2,21 @@ import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
 import { CheckCircle, CheckCircleOutline, Delete, Edit, HourglassTop, Visibility } from '@mui/icons-material';
+import { Tooltip } from '@mui/material';
 
 import styles from './style.module.scss';
 
 const TaskCard = ({ task }) => {
+  const navigate = useNavigate();
+
   const getInitialIconIndex = (status) => {
     switch (status.toLowerCase()) {
       case 'todo':
         return 0;
-      case 'in progress':
+      case 'progress':
         return 1;
       case 'done':
         return 2;
@@ -27,8 +32,14 @@ const TaskCard = ({ task }) => {
 
   const statusStyles = {
     todo: styles.todo,
-    'in progress': styles.in_progress,
+    progress: styles.in_progress,
     done: styles.done,
+  };
+
+  const statusStyles2 = {
+    todo: styles.todo2,
+    progress: styles.in_progress2,
+    done: styles.done2,
   };
 
   const priorityIndex = priorities.indexOf(styles[task?.priority]) || 0;
@@ -37,22 +48,27 @@ const TaskCard = ({ task }) => {
   const iconClass = classNames[iconIndex];
   const priorityClass = priorities[priorityIndex];
   const statusClass = statusStyles[task?.status];
+  const statusClass2 = statusStyles2[task?.status];
 
-  const handleClick = () => {
+  const handleToggleStatus = () => {
     setIconIndex((iconIndex + 1) % icons.length);
   };
 
   return (
     <div className={styles.card}>
-      <div className={`${styles.card__left} ${statusClass}`} onClick={handleClick}>
-        <Icon className={`${styles.card__left__icon} ${iconClass}`} />
-      </div>
+      <Tooltip title="Toggle Status">
+        <div className={`${styles.card__left} ${statusClass}`} onClick={handleToggleStatus}>
+          <Icon className={`${styles.card__left__icon} ${iconClass}`} />
+        </div>
+      </Tooltip>
       <div className={styles.card__right}>
         <div className={styles.card__title}>
           <div className={styles.card__label}>
             <FormattedMessage id="app_task" />
           </div>
-          <div className={styles.card__title__content}>{task?.title}</div>
+          <Tooltip title={task?.title}>
+            <div className={styles.card__title__content}>{task?.title}</div>
+          </Tooltip>
         </div>
         <div className={styles.card__priority}>
           <div className={styles.card__label}>
@@ -62,10 +78,27 @@ const TaskCard = ({ task }) => {
             <FormattedMessage id={`app_priority_${task?.priority}`} />
           </div>
         </div>
+        <div className={styles.card__status}>
+          <div className={styles.card__label}>
+            <FormattedMessage id="app_status" />
+          </div>
+          <div className={`${styles.card__status__content} ${statusClass2}`}>
+            <FormattedMessage id={`app_status_${task?.status}`} />
+          </div>
+        </div>
         <div className={styles.card__actions}>
-          <Visibility className={`${styles.card__actions__view} ${styles.card__actions__icon}`} />
-          <Edit className={`${styles.card__actions__edit} ${styles.card__actions__icon}`} />
-          <Delete className={`${styles.card__actions__delete} ${styles.card__actions__icon}`} />
+          <Tooltip title="View details">
+            <Visibility
+              className={`${styles.card__actions__view} ${styles.card__actions__icon}`}
+              onClick={() => navigate(`detail/${task?.id}`)}
+            />
+          </Tooltip>
+          <Tooltip title="Edit">
+            <Edit className={`${styles.card__actions__edit} ${styles.card__actions__icon}`} />
+          </Tooltip>
+          <Tooltip title="Delete">
+            <Delete className={`${styles.card__actions__delete} ${styles.card__actions__icon}`} />
+          </Tooltip>
         </div>
       </div>
     </div>

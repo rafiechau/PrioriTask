@@ -4,9 +4,13 @@
   @include flex-center;
   border-radius: 1rem;
   border: 5px dashed $color-text-secondary;
-  width: 33.5rem;
-  height: 3rem;
   cursor: pointer;
+  @include box(13.5rem, 8rem);
+  margin-left: auto;
+  @include apply-at-md-size {
+    @include box(37.5rem, 3rem);
+    margin: 0;
+  }
   &:hover {
     border-color: $color-button;
     .card__icon {

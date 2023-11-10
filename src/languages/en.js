@@ -14,4 +14,8 @@ export default {
   app_priority_medium: 'Medium',
   app_priority_high: 'High↑',
   app_task_list: 'Task List',
+  app_status: 'Status',
+  app_status_todo: 'Todo',
+  app_status_progress: 'In Progress',
+  app_status_done: 'Done',
 };

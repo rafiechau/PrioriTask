@@ -1,9 +1,22 @@
-import React from 'react'
+import PropTypes from 'prop-types';
+import { createStructuredSelector } from 'reselect';
+import { connect, useDispatch } from 'react-redux';
 
-const DetailPage = () => {
-  return (
-    <div>DetailPage</div>
-  )
-}
+import { selectTaskById } from './selectors';
 
-export default DetailPage
+import styles from './style.module.scss';
+
+const DetailPage = ({ task }) => {
+  const dispatch = useDispatch();
+  return <div>asdad</div>;
+};
+
+DetailPage.propTypes = {
+  task: PropTypes.object,
+};
+
+const mapStateToProps = createStructuredSelector({
+  task: selectTaskById,
+});
+
+export default connect(mapStateToProps)(DetailPage);
