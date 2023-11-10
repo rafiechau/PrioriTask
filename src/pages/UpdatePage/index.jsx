@@ -1,10 +1,5 @@
-import React from 'react'
-import styles from './style.module.scss'
+import React from 'react';
 
-const UpdatePage = () => {
-  return (
-    <div>UpdatePage</div>
-  )
-}
+const UpdatePage = () => <div>UpdatePage</div>;
 
-export default UpdatePage
+export default UpdatePage;

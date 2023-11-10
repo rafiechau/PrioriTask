@@ -7,9 +7,9 @@ import { selectLocale, selectTheme } from '@containers/App/selectors';
 
 import Navbar from '@components/Navbar';
 
-const MainLayout = ({ children, locale, theme, intl: { formatMessage } }) => (
+const MainLayout = ({ children, locale, intl: { formatMessage } }) => (
   <div>
-    <Navbar title={formatMessage({ id: 'app_title_header' })} locale={locale} theme={theme} />
+    <Navbar title={formatMessage({ id: 'app_title_header' })} locale={locale} />
     {children}
   </div>
 );
@@ -22,7 +22,6 @@ const mapStateToProps = createStructuredSelector({
 MainLayout.propTypes = {
   children: PropTypes.element.isRequired,
   locale: PropTypes.string,
-  theme: PropTypes.string,
   intl: PropTypes.object,
 };
 

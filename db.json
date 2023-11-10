@@ -1,34 +1,160 @@
 {
-    "tasks": [
-        {
-            "id": 1,
-            "title": "Go to Gym",
-            "userId": 1,
-            "status": "in progress",
-            "priority": "high",
-            "description": "Go to Gym in monday night RAW"
-        },
-        {
-            "id": 2,
-            "title": "Go to Beach",
-            "userId": 1,
-            "status": "done",
-            "priority": "low",
-            "description": "Go to beach in monday night RAW"
-        }
-    ],
-    "users": [
-        {
-            "id": 1,
-            "fullName": "alfian",
-            "email": "alfian@gmail.com",
-            "password": "1234567"
-        },
-        {
-            "id": 2,
-            "fullName": "rafie",
-            "email": "rafie@gmail.com",
-            "password": "1234567"
-        }
-    ]
+  "tasks": [
+    {
+      "title": "teesss update yang kedua",
+      "priority": "medium",
+      "status": "progress",
+      "description": "Go to Gym in monday night RAW Go to Gym in monday night RAW Go to Gym in monday night RAW Go to Gym in monday night RAW Go to Gym in monday night RAW Go to Gym in monday night RAW Go to Gym in monday night RAW Go to Gym in monday night RAW ",
+      "userId": 1
+    },
+    {
+      "title": "test 2",
+      "priority": "medium",
+      "status": "progress",
+      "description": "<p>testt</p>",
+      "author": "rafie",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "title": "ini judul",
+      "priority": "high",
+      "status": "todo",
+      "description": "<p>test</p><p>dua tia</p>",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "title": "ini judul yang paling update",
+      "priority": "high",
+      "status": "progress",
+      "description": "<p>test</p>",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "title": "test tambah",
+      "priority": "medium",
+      "status": "todo",
+      "description": "<p>mantap</p>",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "title": "test tambah yang kedua",
+      "priority": "low",
+      "status": "todo",
+      "description": "<p>p</p>",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "title": "test tambah",
+      "priority": "medium",
+      "status": "todo",
+      "description": "<p>dddd</p>",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "title": "test",
+      "priority": "high",
+      "status": "progress",
+      "description": "<p>cdqwcd</p>",
+      "userId": 7,
+      "id": 10
+    },
+    {
+      "title": "update",
+      "priority": "low",
+      "status": "done",
+      "description": "<p>cwcwqsqx\tsq</p>",
+      "userId": 7,
+      "id": 11
+    },
+    {
+      "title": "qxqwede2",
+      "priority": "high",
+      "status": "done",
+      "description": "<p>xwqeq</p>",
+      "userId": 7,
+      "id": 12
+    },
+    {
+      "title": "ini tugas 2",
+      "priority": "medium",
+      "status": "done",
+      "description": "<ol><li>a</li><li>b</li><li>c</li><li>d</li></ol>",
+      "userId": 4,
+      "id": 13
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullName": "alfian",
+      "email": "alfian@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": 2,
+      "fullName": "rafie",
+      "email": "rafie@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "fullName": "laka",
+      "email": "laka@gmail.com",
+      "password": "1234567",
+      "id": 3
+    },
+    {
+      "fullName": "rafi",
+      "email": "chau@gmail.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "fullName": "alfian",
+      "email": "alfian1@gmail.com",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "fullName": "malvern",
+      "email": "mavern123@gmail.com",
+      "password": "123456",
+      "id": 6
+    },
+    {
+      "fullName": "rafi11",
+      "email": "rafi11@gmail.com",
+      "password": "123456",
+      "id": 7
+    },
+    {
+      "fullName": "binturong",
+      "email": "binturong@gmail.com",
+      "password": "1234567",
+      "id": 8
+    },
+    {
+      "fullName": "toyib",
+      "email": "toyib@gmail.com",
+      "password": "12345678",
+      "id": 9
+    },
+    {
+      "fullName": "rafi",
+      "email": "rafi12@gmail.com",
+      "password": "123456",
+      "id": 10
+    },
+    {
+      "fullName": "rafi",
+      "email": "rafi@gmail.com",
+      "password": "123456",
+      "id": 11
+    }
+  ]
 }
