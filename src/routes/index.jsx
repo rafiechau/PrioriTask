@@ -38,7 +38,7 @@ const routes = [
     layout: MainLayout,
   },
   {
-    path: '/edit',
+    path: '/edit/:id',
     name: 'edit',
     protected: false,
     component: UpdatePage,
