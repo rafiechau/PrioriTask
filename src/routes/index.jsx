@@ -41,7 +41,7 @@ const routes = [
     path: '/edit/:id',
     name: 'edit',
     protected: false,
-    component: UpdatePage,
+    component: AddPage,
     layout: MainLayout,
   },
   {

@@ -7,8 +7,7 @@ export const createTask = (data) => ({
 });
 export const updateTask = (taskId, data) => ({
   type: UPDATE_TAKS,
-  taskId,
-  data,
+  payload: { taskId, data },
 });
 export const setNewTask = () => ({
   type: SET_NEW_TASK,

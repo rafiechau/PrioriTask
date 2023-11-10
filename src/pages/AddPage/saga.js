@@ -14,20 +14,19 @@ export function* doCreateTask({ data }) {
     alert('Create Task Error', +error.message);
   }
 }
-export function* doUpdateTask({ taskId, data }) {
+export function* doUpdateTask(action) {
   try {
+    const { taskId, data } = action.payload;
     const response = yield call(updateTask, taskId, data);
     if (response) {
-      yield put(setUpdatepTask());
-      alert('Jorney Updated');
+      yield put(setUpdatepTask(response));
     }
   } catch (error) {
-    // alert('Update Task Error', + error.message);
-    console.log(error);
+    alert("ada yang salah dari saga kamu")
   }
 }
 
-export function* addJorneySaga() {
+export function* addTaskSaga() {
   yield takeLatest(CREATE_TASK, doCreateTask);
   yield takeLatest(UPDATE_TAKS, doUpdateTask);
 }

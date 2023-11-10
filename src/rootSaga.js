@@ -1,8 +1,10 @@
 import { all } from 'redux-saga/effects';
 
 import appSaga from '@containers/App/saga';
-import { addJorneySaga } from '@pages/AddPage/saga';
+import homeSaga from '@pages/Home/saga';
+import detailSaga from '@pages/DetailPage/saga';
+import { addTaskSaga } from '@pages/AddPage/saga';
 
 export default function* rootSaga() {
-  yield all([appSaga(), addJorneySaga()]);
+  yield all([appSaga(), homeSaga(), detailSaga(), addTaskSaga()]);
 }

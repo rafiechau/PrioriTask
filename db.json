@@ -1,28 +1,58 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "Go to Gym",
-      "userId": 1,
-      "status": "in progress",
-      "priority": "high",
-      "description": "Go to Gym in monday night RAW"
-    },
-    {
-      "id": 2,
-      "title": "Go to Beach",
-      "userId": 1,
-      "status": "done",
+      "title": "teesssxs",
       "priority": "low",
-      "description": "Go to beach in monday night RAW"
+      "status": "progress",
+      "description": "<p>testtcdwqcqwdssss</p>",
+      "author": "rafie",
+      "userId": 1,
+      "id": 1
     },
     {
-      "task": "rafie chautie",
-      "priority": "Low",
-      "description": "<p>aku suka kamu</p>",
+      "title": "test 2",
+      "priority": "medium",
+      "status": "progress",
+      "description": "<p>testt</p>",
+      "author": "rafie",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "title": "test 4",
+      "priority": "medium",
+      "status": "Todo",
+      "description": "<p>testt</p>",
       "author": "rafie",
       "userId": 1,
       "id": 3
+    },
+    {
+      "title": "test 2",
+      "priority": "medium",
+      "status": "progress",
+      "description": "<p>testt</p>",
+      "author": "rafie",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "title": "test",
+      "priority": "medium",
+      "status": "Todo",
+      "description": "<p>testt</p>",
+      "author": "rafie",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "title": "test cwqcwc",
+      "priority": "low",
+      "status": "done",
+      "description": "<p>testtwdcwqcq</p>",
+      "author": "rafie",
+      "userId": 1,
+      "id": 6
     }
   ],
   "users": [

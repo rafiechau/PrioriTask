@@ -1,0 +1,23 @@
+@import '@styles/base';
+
+.card {
+  @include flex-center;
+  border-radius: 1rem;
+  border: 5px dashed $color-text-secondary;
+  cursor: pointer;
+  @include box(13.5rem, 8rem);
+  margin-left: auto;
+  @include apply-at-md-size {
+    @include box(37.5rem, 3rem);
+    margin: 0;
+  }
+  &:hover {
+    border-color: $color-button;
+    .card__icon {
+      color: $color-button;
+    }
+  }
+  &__icon {
+    color: $color-text-secondary;
+  }
+}
