@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import styles from './style.module.scss';
-import { useNavigate } from 'react-router-dom';
-import { connect, useDispatch } from 'react-redux';
-import { setUser } from './actions';
-import { selectLogin } from '@containers/Client/selectors';
-import { createStructuredSelector } from 'reselect';
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { connect, useDispatch } from 'react-redux'
+import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
+import { createStructuredSelector } from 'reselect'
 
-function Login({ login }) {
+import { setUser } from './actions'
+import { selectLogin } from '@containers/Client/selectors'
+
+import styles from './style.module.scss'
+
+const Login = ({ login }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -37,9 +40,9 @@ function Login({ login }) {
         </form>
         <button onClick={handleLogin}>Login</button>
         <p>
-          Dont have an account? Click{' '}
+        <FormattedMessage id="app_have_account" /> Click{' '}
           <a href="" onClick={() => navigate('/register')}>
-            Here
+          <FormattedMessage id="app_here" />
           </a>
         </p>
       </div>

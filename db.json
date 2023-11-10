@@ -2,11 +2,10 @@
   "tasks": [
     {
       "title": "teesss update yang kedua",
-      "priority": "high",
-      "status": "todo",
-      "description": "<p>testtcdwqcqwdssss</p>",
-      "userId": 1,
-      "id": 1
+      "priority": "medium",
+      "status": "progress",
+      "description": "Go to Gym in monday night RAW Go to Gym in monday night RAW Go to Gym in monday night RAW Go to Gym in monday night RAW Go to Gym in monday night RAW Go to Gym in monday night RAW Go to Gym in monday night RAW Go to Gym in monday night RAW ",
+      "userId": 1
     },
     {
       "title": "test 2",
@@ -56,6 +55,14 @@
       "description": "<p>dddd</p>",
       "userId": 1,
       "id": 7
+    },
+    {
+      "title": "test update",
+      "priority": "low",
+      "status": "todo",
+      "description": "<p>ccwqcwqcwdcwq</p>",
+      "userId": 8,
+      "id": 8
     }
   ],
   "users": [
@@ -70,6 +77,42 @@
       "fullName": "rafie",
       "email": "rafie@gmail.com",
       "password": "1234567"
+    },
+    {
+      "fullName": "laka",
+      "email": "laka@gmail.com",
+      "password": "1234567",
+      "id": 3
+    },
+    {
+      "fullname": "uya",
+      "email": "uya@gmail.com",
+      "password": "12345678",
+      "id": 4
+    },
+    {
+      "fullname": "uzu",
+      "email": "uzu@gmail.com",
+      "password": "1234567",
+      "id": 5
+    },
+    {
+      "fullname": "lali",
+      "email": "lali@gmail.com",
+      "password": "1234567",
+      "id": 6
+    },
+    {
+      "fullname": "binturong",
+      "email": "binturong@gmail.com",
+      "password": "12345678",
+      "id": 7
+    },
+    {
+      "fullname": "rafie",
+      "email": "chau@gmail.com",
+      "password": "123456",
+      "id": 8
     }
   ]
 }

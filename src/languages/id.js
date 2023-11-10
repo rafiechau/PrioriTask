@@ -7,6 +7,8 @@ export default {
   app_popup_error_title: 'Terjadi kesalahan!',
   app_popup_error_message: 'Maaf, telah terjadi kesalahan. Silakan coba beberapa saat lagi',
   app_popup_close_button_label: 'Tutup',
+  app_error_register_message_1: 'Semua data harus di isi ya geys !',
+  app_error_register_message_2: 'Password minimal 6 karakter ya geys !',
 
   app_header_add: 'Tambah Tugas',
   app_header_edit: 'Ubah Tugas',
@@ -25,4 +27,8 @@ export default {
   app_back: 'Kembali',
   app_logout: 'Keluar',
   app_are_you_sure: 'Apakah anda yakin ingin menghapus tugas ini?',
+  app_fullName: 'Nama lengkap',
+  app_here: 'Disini',
+  app_to_login: 'untuk Login',
+  app_have_account: 'Belum punya akun ya? kesian',
 };

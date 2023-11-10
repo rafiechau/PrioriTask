@@ -32,6 +32,12 @@ const Navbar = ({ title, locale, user }) => {
     setAnchorEl(null);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('persist:client');
+    window.location.reload();
+    navigate('/login');
+  };
+
   const handleClick = (event) => {
     setMenuPosition(event.currentTarget);
   };
@@ -66,9 +72,11 @@ const Navbar = ({ title, locale, user }) => {
             <div className={classes.lang}>{locale}</div>
             <ExpandMoreIcon />
           </div>
-          <IconButton onClick={handleAvatarClick}>
-            <Avatar className={classes.avatar} src="https://source.unsplash.com/500x500/?avatar" />
-          </IconButton>
+          {user && (
+            <IconButton onClick={handleAvatarClick}>
+              <Avatar className={classes.avatar} src="https://source.unsplash.com/500x500/?avatar" />
+            </IconButton>
+          )}
           <Menu
             className={classes.dropdown}
             anchorEl={anchorEl}
@@ -88,7 +96,7 @@ const Navbar = ({ title, locale, user }) => {
               <div className={classes.email}>{user?.email}</div>
             </div>
             <div className={classes.divider} />
-            <MenuItem className={classes.dropdown__item}>
+            <MenuItem onClick={handleLogout} className={classes.dropdown__item}>
               <Logout className={classes.logoutIcon} />
               <div className={classes.logoutText}>
                 <FormattedMessage id="app_logout" />

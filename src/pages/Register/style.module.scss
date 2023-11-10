@@ -13,23 +13,31 @@
         margin-top: 30px;
     }
 
-
+    .error {
+        margin-top: 10px;
+        font-size: 15px;
+        color: red
+    }
 
     .registerContent {
         background-color: $color-white;
-        width: 550px;
-        height: 550px;
+        padding: 2rem 4rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         border-radius: 10px;
         box-shadow: 0px 4px 8px $color-dark-blue;
-
+        @include apply-at-md-size{
+            width: 20rem;
+        }
         .formRegister {
             display: flex;
             flex-direction: column;
-            width: 450px;
-            margin-top: 30px;
+            width: 90%;
+   
+            @include apply-at-md-size{
+                
+            }
 
             input {
                 margin-bottom: 30px;
@@ -48,13 +56,17 @@
 
         button {
             border: none;
-            width: 450px;
+            
             background-color: $color-dark-blue;
-            height: 50px;
+            padding: 1rem 2rem;
+            width: 100%;
             border-radius: 5px;
             color: $color-white;
             cursor: pointer;
             margin-top: 10px;
+            @include apply-at-md-size{
+                width: 90%;
+            }
         }
 
         button:hover {
