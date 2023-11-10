@@ -50,7 +50,7 @@ const Navbar = ({ title, locale, user }) => {
   const goHome = () => {
     navigate('/');
   };
-  console.log(user);
+
   return (
     <div className={classes.headerWrapper} data-testid="navbar">
       <div className={classes.contentWrapper}>

@@ -8,7 +8,7 @@ import { getInitialIconIndex, useDynamicStyles } from '@utils/useDynamicStyles';
 import { deleteTaskById } from '@pages/Home/actions';
 
 import { CheckCircle, CheckCircleOutline, Delete, Edit, HourglassTop, Visibility } from '@mui/icons-material';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip } from '@mui/material';
+import { Dialog, DialogActions, DialogContent, DialogTitle, Tooltip } from '@mui/material';
 
 import styles from './style.module.scss';
 
