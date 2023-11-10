@@ -27,5 +27,5 @@ export default {
   app_fullName: 'Nama lengkap',
   app_here: 'Disini',
   app_to_login: 'untuk Login',
-  app_have_account: 'Belum punya akun ya? kesian'
+  app_have_account: 'Belum punya akun ya? kesian',
 };

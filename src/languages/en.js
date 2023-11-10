@@ -27,5 +27,5 @@ export default {
   app_fullName: 'Fullname',
   app_here: 'Here',
   app_to_login: 'to Login',
-  app_have_account: 'Dont have an Account?'
+  app_have_account: 'Dont have an Account?',
 };
